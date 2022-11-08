@@ -1,0 +1,2 @@
+class Soap < ApplicationRecord
+end
