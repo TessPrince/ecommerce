@@ -1,0 +1,36 @@
+﻿id,name,price,stock,category
+1,cat in bed,10.5,5,cat
+2,dog with collar,10.5,2,dog
+3,bunny with bow,10.5,8,bunny
+4,red rose,7.5,20,rose
+5,pink tulip,7.5,15,tulip
+6,red roses and red tulips,20.5,1,flower bouquet
+7,polar bear,10.5,11,bear
+8,orange,5.75,8,orange
+9,pine cone,5.75,6,pine cone
+10,blue orchid,7.5,2,orchid
+11,orange fox,10.5,9,fox
+12,grey wolf,10.5,13,wolf
+13,purple gerberas,7.5,30,gerberas
+14,two doves on a cookie,6.5,7,food
+15,chocolate 3 tier cake,15,1,food
+16,daisy,7.5,9,daisy
+17,cooked chicken,5.75,1,food
+18,pink roses and pink tulips,20.5,2,flower bouquet
+19,orange tulips and yellow tulips,20.5,1,flower bouquet
+20,red rose and daisies,20.5,1,flower bouquet
+21,sleeping cat,10.5,8,cat
+22,bunny with carrot,10.5,14,bunny
+23,yellow tulip,7.5,16,tulip
+24,orange tulip,7.5,8,tulip
+25,purple orchid,7.5,2,orchid
+26,brown wolf,10.5,12,wolf
+27,red velvet 3 tier cake,15,1,food
+28,brown bear,10.5,11,bear
+29,pink gerberas,7.5,28,gerberas
+30,arctic fox,10.5,9,fox
+31,black bear,10.5,5,bear
+32,black bear with honey,10.5,9,bear
+33,brown dog,10.5,2,dog
+34,grey cat,10.5,3,cat
+35,calico cat,10.5,8,cat
