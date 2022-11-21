@@ -6,7 +6,7 @@
 5,pink tulip,7.5,15,tulip
 6,red roses and red tulips,20.5,1,flower bouquet
 7,polar bear,10.5,11,bear
-8,orange,5.75,8,orange
+8,orange,5.75,8,food
 9,pine cone,5.75,6,pine cone
 10,blue orchid,7.5,2,orchid
 11,orange fox,10.5,9,fox
@@ -34,3 +34,68 @@
 33,brown dog,10.5,2,dog
 34,grey cat,10.5,3,cat
 35,calico cat,10.5,8,cat
+36,cat with collar,10.5,5,cat
+37,cat with bow,10.5,5,cat
+38,2 kittens sleeping together,10.5,5,cat
+39,carrot 3 tier cake,15,1,food
+40,peanut 3 tier cake,15,1,food
+41,birthday cake 3 tier cake,15,1,food
+42,vanilla cake 3 tier cake,15,1,food
+43,tabby cat,10.5,8,cat
+44,blue russian cat,10.5,8,cat
+45,husky,10.5,2,dog
+46,golden retreiver,10.5,2,dog
+47,dashund,10.5,2,dog
+48,poodle,10.5,2,dog
+49,samoyed,10.5,2,dog
+50,shiba inu,10.5,2,dog
+51,corgi,10.5,2,dog
+52,black and white bunny,10.5,8,bunny
+53,dalmation,10.5,8,dog
+54,pug,10.5,2,dog
+55,german sheapered,10.5,2,dog
+56,Laberador,10.5,2,dog
+57,Bishon Frise,10.5,4,dog
+58,cream rabbit,10.5,8,bunny
+59,pizza,7.5,1,food
+60,sugar cookie,7.5,1,food
+61,cheese,7.5,1,food
+62,purple tulip,7.5,16,tulip
+63,white tulip,7.5,16,tulip
+64,pink orchid,7.5,2,orchid
+65,white orchid,7.5,2,orchid
+66,yellow orchid,7.5,2,orchid
+67,black rose,7.5,13,rose
+68,black roses and orange tulips,20.5,2,flower bouquet
+69,black roses and red roses,20.5,2,flower bouquet
+70,white rabbit,10.5,8,bunny
+71,black rabbit,10.5,8,bunny
+72,bishon maltese,10.5,4,dog
+73,boston terrier,10.5,4,dog
+74,pit bull,10.5,4,dog
+75,chow chow,10.5,4,dog
+76,havanese,10.5,4,dog
+77,brown fox,10.5,9,fox
+78,laughing fox,10.5,9,fox
+79,purple gerberas,7.5,28,gerberas
+80,white gerberas,7.5,28,gerberas
+81,orange gerberas,7.5,28,gerberas
+82,yellow gerberas,7.5,28,gerberas
+83,black roses and yellow gerberas,20.5,2,flower bouquet
+84,yellow gerberas and orange tulips,20.5,2,flower bouquet
+85,orange gerberas and yellow gerberas,20.5,2,flower bouquet
+86,black roses and red gerberas,20.5,2,flower bouquet
+87,red gerberas,7.5,28,gerberas
+88,red tulips,7.5,16,tulip
+89,red orchid,7.5,2,orchid
+90,brown bear with a red bow,10.5,11,bear
+91,polar bear with sunglasses,10.5,11,bear
+92,cat with blue yarn,10.5,5,cat
+93,cat with red yarn,10.5,5,cat
+94,speckled rabbit,10.5,8,bunny
+95,white fluffy kitten,10.5,5,cat
+96,grey fluffy kitten,10.5,5,cat
+97,leaping fox,10.5,9,fox
+98,bunny on hind legs,10.5,8,bunny
+99,2 cubs playing,10.5,11,bear
+100,2 puppies playing,10.5,4,dog
