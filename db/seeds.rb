@@ -1,6 +1,7 @@
 require 'csv'
 require 'faker'
 
+AdminUser.destroy_all
 Soap.destroy_all
 Category.destroy_all
 
@@ -24,3 +25,5 @@ soaps.each do |data|
     puts "Invalid category #{data['category']} for soap: #{data["name"]}"
   end
 end
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
