@@ -8,9 +8,35 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
   </head>
 
   <body>
-    <%= yield %>
+    <section class="section">
+    <div class="container">
+        <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <figure class="image is-96x96">
+              <a href="/"><%= image_tag "logos/Logo-removebg-preview.png", alt: "3d Soaps Logo" %></a>
+            </figure>
+          </div>
+          <div id="navbarBasicExample" class="navbar-menu is-active">
+            <div class="navbar-start">
+              <a class=" navbar-item has-text-dark" href="/">Home</a>
+              <a class="navbar-item has-text-dark" href="/about">About</a>
+            </div>
+          </div>
+          <div class="navbar-end">
+            <div class="navbar-item">
+            </div>
+          </div>
+        </nav>
+
+
+        <hr>
+        <%= yield %>
+          <%= render partial: 'common/footer' %>
+      </div>
+    </section>
   </body>
 </html>

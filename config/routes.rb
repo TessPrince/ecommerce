@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   get 'customers/show'
   get 'soaps/index'
   get 'soaps/show'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+ get "/about", to: "about#index"
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  root to: "home#index"
 end

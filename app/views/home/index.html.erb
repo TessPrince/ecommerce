@@ -1,0 +1,6 @@
+<h2 class="subtitle is-2">Products</h2>
+<ul>
+  <% @soaps.each do |s| %>
+    <li><%= link_to s.name, soaps_index_path(s) %></li>
+  <% end %>
+</ul>
