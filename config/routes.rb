@@ -14,6 +14,14 @@ Rails.application.routes.draw do
 
  get "/about", to: "about#index"
 
+ get "soaps/index"
+ resources :soaps, only: [:index, :show] do
+  collection do
+    get "search"
+  end
+end
+
+
   # Defines the root path route ("/")
   root to: "home#index"
 end
