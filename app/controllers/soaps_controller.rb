@@ -12,9 +12,9 @@ class SoapsController < ApplicationController
     category_wildcard = params[:category]
 
     if category_wildcard != ""
-      @soaps = Soap.where("name LIKE ? AND category_id = ?", wildcard, category_wildcard).page(params[:page])
+      @soaps = Soap.where("name LIKE ? OR description LIKE ? AND category_id = ?", wildcard, wildcard, category_wildcard).page(params[:page])
     else
-      @soaps = Soap.where("name LIKE ?", wildcard)
+      @soaps = Soap.where("name LIKE ? OR description LIKE ?", wildcard, wildcard)
     end
   end
 end

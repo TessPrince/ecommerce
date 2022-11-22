@@ -18,7 +18,8 @@ soaps.each do |data|
       name: data["name"],
       price: data["price"],
       weight: Faker::Number.decimal(l_digits: 1, r_digits: 1),
-      stock: data["stock"]
+      stock: data["stock"],
+      description: Faker::Quote.famous_last_words
     )
     puts "Invalid soap #{data["name"]}" unless soaps&.valid?
   else

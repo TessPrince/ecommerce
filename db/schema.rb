@@ -80,6 +80,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_192222) do
     t.decimal "price"
     t.decimal "weight"
     t.integer "stock"
+    t.string "description"
     t.integer "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
