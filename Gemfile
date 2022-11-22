@@ -34,6 +34,9 @@ gem 'faker'
 gem 'activeadmin'
 gem 'devise'
 
+#For Pagination
+gem 'kaminari'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

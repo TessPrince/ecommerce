@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @soaps = Soap.all
+    @soaps = Soap.page(params[:page])
   end
 end
