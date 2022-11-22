@@ -14,7 +14,7 @@
 <% end %>
 <ul>
   <% @soaps.each do |s| %>
-    <li><%= s.name %></li>
+    <li><%= link_to s.name, s %></li>
   <% end %>
 
   <%= paginate @soaps %>

@@ -1,2 +1,9 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<h1 class="title is-2">Category: <%= @category.name %></h1>
+<ul>
+  <% @soaps.each do |s| %>
+    <li><%= s.name %></li>
+  <% end %>
+</ul>
+
+
+

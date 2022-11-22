@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   end
 end
 
+resources :categories, only: [:index, :show]
 
   # Defines the root path route ("/")
   root to: "home#index"

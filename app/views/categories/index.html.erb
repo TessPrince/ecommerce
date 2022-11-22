@@ -1,2 +1,6 @@
-<h1>Categories#index</h1>
-<p>Find me in app/views/categories/index.html.erb</p>
+<h2 class="subtitle is-2">Categories</h2>
+  <% @categories.each do |c| %>
+    <li><%= link_to c.name, c %></li>
+  <% end %>
+
+  <%= paginate @categories %>
