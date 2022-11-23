@@ -12,29 +12,36 @@
   </head>
 
   <body>
-    <section class="section">
-    <div class="container">
-        <nav class="navbar is-light" role="navigation" aria-label="main navigation">
-          <div class="navbar-brand">
-            <figure class="image is-96x96">
-              <a href="/"><%= image_tag "logos/Logo-removebg-preview.png", alt: "3d Soaps Logo" %></a>
-            </figure>
-          </div>
-          <div id="navbarBasicExample" class="navbar-menu is-active">
-            <div class="navbar-start">
-              <a class=" navbar-item has-text-dark" href="/">Home</a>
-              <a class="navbar-item has-text-dark" href="/about">About</a>
-              <a class="navbar-item has-text-dark" href="/categories">Categories</a>
+    <header>
+      <section class="section">
+      <div class="container">
+          <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <figure class="image is-96x96">
+                <a href="/"><%= image_tag "logos/Logo-removebg-preview.png", alt: "3d Soaps Logo" %></a>
+              </figure>
             </div>
-          </div>
-          <div class="navbar-end">
-            <div class="navbar-item">
+            <div id="navbarBasicExample" class="navbar-menu is-active">
+              <div class="navbar-start">
+                <a class=" navbar-item has-text-dark" href="/">Home</a>
+                <a class="navbar-item has-text-dark" href="/about">About</a>
+                <a class="navbar-item has-text-dark" href="/categories">Categories</a>
+              </div>
             </div>
-          </div>
-        </nav>
-        <hr>
+            <div class="navbar-end">
+              <div class="navbar-item">
+              </div>
+            </div>
+          </nav>
+    </header>
+         <% if flash[:notice] %>
+        <p>
+          <%= flash[:notice] %>
+        </p>
+      <% end %>
         <%= render_breadcrumbs :separator => ' > ' %>
         <%= yield %>
+        <%= debug session[:shopping_cart] %>
           <%= render partial: 'common/footer' %>
       </div>
     </section>
