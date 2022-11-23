@@ -37,6 +37,9 @@ gem 'devise'
 #For Pagination
 gem 'kaminari'
 
+#For breadcrumbs
+gem "breadcrumbs_on_rails"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

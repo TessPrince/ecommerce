@@ -32,9 +32,8 @@
             </div>
           </div>
         </nav>
-
-
         <hr>
+        <%= render_breadcrumbs :separator => ' > ' %>
         <%= yield %>
           <%= render partial: 'common/footer' %>
       </div>
