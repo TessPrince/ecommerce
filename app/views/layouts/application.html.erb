@@ -6,7 +6,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
   </head>
@@ -26,6 +25,23 @@
                 <a class=" navbar-item has-text-dark" href="/">Home</a>
                 <a class="navbar-item has-text-dark" href="/about">About</a>
                 <a class="navbar-item has-text-dark" href="/categories">Categories</a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <summary class="has-text-dark navbar-link">
+                    Cart
+                    <% if cart.present? %>
+                      <sup><%= cart.size %></sup>
+                    <% end %>
+                  </summary>
+                  <ul>
+                    <div class="navbar-dropdown">
+                      <% cart.each do |soap| %>
+                        <li class="navbar-item">
+                          <%= soap.name %><%= button_to "Delete", cart_path(soap), method: :delete %>
+                        </li>
+                      <% end %>
+                    </div>
+                  </ul>
+                </div>
               </div>
             </div>
             <div class="navbar-end">
@@ -41,8 +57,8 @@
       <% end %>
         <%= render_breadcrumbs :separator => ' > ' %>
         <%= yield %>
-        <%= debug session[:shopping_cart] %>
-          <%= render partial: 'common/footer' %>
+
+        <%= render partial: 'common/footer' %>
       </div>
     </section>
   </body>
