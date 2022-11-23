@@ -2,7 +2,7 @@
   Soap found when searched for: <%= params[:keywords] %>
   <ul>
     <% @soaps.each do |soap| %>
-      <li><%= soap.name %></li>
+      <li><%= link_to soap.name, soap %></li>
     <% end %>
   </ul>
 </p>

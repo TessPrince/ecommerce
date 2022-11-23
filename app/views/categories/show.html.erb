@@ -1,7 +1,7 @@
 <h1 class="title is-2">Category: <%= @category.name %></h1>
 <ul>
   <% @soaps.each do |s| %>
-    <li><%= s.name %></li>
+    <li><%= link_to s.name, s %></li>
   <% end %>
 </ul>
 

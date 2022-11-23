@@ -8,8 +8,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    add_breadcrumb "Categories", "index"
     @category = Category.find(params[:id])
     @soaps = @category.soaps
+    add_breadcrumb @category.name, "index"
   end
 end
