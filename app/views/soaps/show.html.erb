@@ -1,4 +1,8 @@
 <h1 class="title is-2">Soap <%= @soap.name %></h1>
-<p><%= @soap.description %></p>
-<p><%= @soap.weight %></p>
-<p><%= @soap.price %></p>
+<%= form_with url: cart_index_path, method: :post do %>
+  <p><%= @soap.description %></p>
+  <p><%= @soap.weight %></p>
+  <p><%= @soap.price %></p>
+  <%= hidden_field_tag(:id, @soap.id) %>
+  <%= button_tag 'Add to cart' %>
+<% end %>

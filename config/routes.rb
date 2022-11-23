@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 end
 
 resources :categories, only: [:index, :show]
+resources :cart, only: %i[create destroy]
 
   # Defines the root path route ("/")
   root to: "home#index"
