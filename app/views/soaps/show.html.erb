@@ -4,12 +4,12 @@
   <p><%= @soap.price %></p>
 
   <% if cart.include?(@soap) %>
-    <%= button_to cart_path(@soap), method: :delete do %>
+    <%= button_to cart_path(@soap), class: "button is-danger", method: :delete do %>
       Remove From Cart
     <% end %>
   <% else %>
     <%= form_with url: cart_index_path, method: :post do %>
       <%= hidden_field_tag(:id, @soap.id) %>
-      <%= button_tag 'Add to cart' %>
+      <%= button_tag 'Add to cart', class: "button is-danger" %>
     <% end %>
   <% end %>
