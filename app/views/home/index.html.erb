@@ -13,9 +13,14 @@
   </div>
 <% end %>
 <ul>
+  <div class="block">
   <% @soaps.each do |s| %>
     <li><%= link_to s.name, s %></li>
   <% end %>
-
-  <%= paginate @soaps %>
+  </div>
+  <nav class="pagination" role="navigation" aria-label="pagination">
+    <ul class="pagination-list">
+      <%= paginate @soaps %>
+    </ul>
+  </nav>
 </ul>
