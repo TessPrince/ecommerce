@@ -24,6 +24,15 @@ end
 resources :categories, only: [:index, :show]
 resources :cart, only: %i[create destroy]
 
+  # /checkout/success
+  # /checkout/create
+  # /checkout/cancel
+  scope "/checkout" do
+    post "create", to: "checkout#create", as: "checkout_create"
+    get "success", to: "checkout#success", as: "checkout_success"
+    get "cancel", to: "checkout#cancel", as: "checkout_cancel"
+  end
+
   # Defines the root path route ("/")
   root to: "home#index"
 end
