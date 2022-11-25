@@ -5,6 +5,6 @@ class HomeController < ApplicationController
     @soaps = Soap.page(params[:page])
     @categories = Category.all
 
-    add_breadcrumb "Products", "index"
+    add_breadcrumb "Products", "/soaps/index"
   end
 end

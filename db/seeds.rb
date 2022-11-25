@@ -21,6 +21,11 @@ soaps.each do |data|
       stock: data["stock"],
       description: Faker::Quote.famous_last_words
     )
+    # query = URI.encode_www_form_component([data["name"] + "soap", data["category"]].join(","))
+    # downloaded_image = URI.open("https://source.unsplash.com/500x500/?#{​query}​​")
+    # soaps.image.attach(io: downloaded_image,
+    #                    filename: "m-#{[data["name"], data["category"]].join('-')}.jpg")
+    # sleep(1)
     puts "Invalid soap #{data["name"]}" unless soaps&.valid?
   else
     puts "Invalid category #{data['category']} for soap: #{data["name"]}"

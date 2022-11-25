@@ -43,6 +43,9 @@ gem "breadcrumbs_on_rails"
 #Stripe for Payments
 gem "stripe"
 
+gem "net-http"
+
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
