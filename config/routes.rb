@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'soaps/show'
 
  get "/about", to: "about#index"
+ get "cart/index"
 
  get "soaps/index"
  resources :soaps, only: [:index, :show] do

@@ -37,7 +37,7 @@
                     <div class="navbar-dropdown">
                       <% cart.each do |soap| %>
                         <li class="navbar-item">
-                          <%= soap.name %><%= button_to "Delete", cart_path(soap), class: "button is-text button is-small", method: :delete %>
+                          <a class="has-text-dark" href="/cart/index"><%= soap.name %></a><%= button_to "Delete", cart_path(soap), class: "button is-text button is-small", method: :delete %>
                         </li>
                       <% end %>
                     </div>
