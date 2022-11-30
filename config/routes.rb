@@ -22,7 +22,9 @@ Rails.application.routes.draw do
 end
 
 resources :categories, only: [:index, :show]
+
 resources :cart, only: %i[create destroy]
+get "cart/index"
 
   # /checkout/success
   # /checkout/create

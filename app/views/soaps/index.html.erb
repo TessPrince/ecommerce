@@ -14,9 +14,17 @@
 <% end %>
 
 <ul>
+  <div class="block">
   <% @soaps.each do |s| %>
+    <% if s.image.present? %>
+      <%= link_to image_tag(s.image, alt: s.name, size:"400x600", :class => "card-img-top"), s %>
+    <% end %>
     <li><%= link_to s.name, s %></li>
   <% end %>
-
-  <%= paginate @soaps %>
+  </div>
+  <nav class="pagination" role="navigation" aria-label="pagination">
+    <ul class="pagination-list">
+      <%= paginate @soaps %>
+    </ul>
+  </nav>
 </ul>
