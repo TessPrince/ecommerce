@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   devise_for :users
 
  get "/about", to: "about#index"
- get "cart/index"
 
  get "soaps/index"
  resources :soaps, only: [:index, :show] do

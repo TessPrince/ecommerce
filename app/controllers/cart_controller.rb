@@ -20,7 +20,4 @@ class CartController < ApplicationController
     flash[:notice] = " - #{soap.name} removed from cart."
   end
 
-  def index
-
-  end
 end
