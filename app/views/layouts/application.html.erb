@@ -56,6 +56,13 @@
             <%= flash[:notice] %>
           </p>
         <% end %>
+        <p class="alert"><%= alert %></p>
+        <% if user_signed_in? %>
+          <div> Welcome <%= current_user.email %> </div>
+            <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "Sign in", new_user_session_path %>
+          <% end %>
         <%= render_breadcrumbs :separator => ' > ' %>
         <%= yield %>
         <%= render partial: 'common/footer' %>
