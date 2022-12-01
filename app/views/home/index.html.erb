@@ -1,4 +1,4 @@
-<h2 class="subtitle is-2">Products</h2>
+<h2 class="title is-2">Products</h2>
 <%= form_with(url: search_soaps_path, method: :get, local: true) do %>
   <div class="field is-grouped mb-5">
     <div class="control is-expanded">
@@ -13,13 +13,20 @@
   </div>
 <% end %>
 <ul>
-  <div class="block">
-  <% @soaps.each do |s| %>
-    <% if s.image.present? %>
-      <%= link_to image_tag(s.image, alt: s.name, size:"400x600", :class => "card-img-top"), s %>
-    <% end %>
-    <li><%= link_to s.name, s %></li>
-  <% end %>
+<div class="columns is-multiline is-centered">
+<% @soaps.each do |s| %>
+
+    <div class="box is-one-third">
+      <li class="subtitle is-3"><%= link_to s.name, s %></li>
+      <% if s.image.present? %>
+          <%= link_to image_tag(s.image, alt: s.name, size:"400x600", :class => "card-img-top"), s %>
+      <% end %>
+    </div>
+
+<% end %>
+</div>
+
+
   </div>
   <nav class="pagination" role="navigation" aria-label="pagination">
     <ul class="pagination-list">

@@ -63,7 +63,9 @@
           </p>
         <% end %>
         <p class="alert"><%= alert %></p>
-        <%= render_breadcrumbs :separator => ' > ' %>
+        <p class="block">
+          <%= render_breadcrumbs :separator => ' > ' %>
+        </p>
         <%= yield %>
         <%= render partial: 'common/footer' %>
       </div>

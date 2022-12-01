@@ -1,15 +1,26 @@
-<h1 class="title is-2">Soap <%= @soap.name %></h1>
-  <p><%= @soap.description %></p>
-  <p><%= @soap.weight %></p>
-  <p><%= @soap.price %></p>
-
-  <% if cart.include?(@soap) %>
-    <%= button_to cart_path(@soap), class: "button is-danger", method: :delete do %>
-      Remove From Cart
-    <% end %>
-  <% else %>
-    <%= form_with url: cart_index_path, method: :post do %>
-      <%= hidden_field_tag(:id, @soap.id) %>
-      <%= button_tag 'Add to cart', class: "button is-danger" %>
-    <% end %>
+<div class="columns">
+  <% if @soap.image.present? %>
+    <div class="column is-one-third">
+      <%= link_to image_tag(@soap.image, alt: @soap.name, size:"400x600", :class => "card-img-top"), @soap %>
+    </div>
   <% end %>
+  <div class="column is-two-thirds">
+    <h1 class="title is-2">Soap <%= @soap.name %></h1>
+    <div class="block">
+    <p class="is-size-5">Description: <%= @soap.description %></p>
+    <p>Weight: <%= @soap.weight %></p>
+    <p class="has-text-primary">Price: $<%= @soap.price %> CAD</p>
+    </div>
+
+    <% if cart.include?(@soap) %>
+      <%= button_to cart_path(@soap), class: "button is-danger", method: :delete do %>
+        Remove From Cart
+      <% end %>
+    <% else %>
+      <%= form_with url: cart_index_path, method: :post do %>
+        <%= hidden_field_tag(:id, @soap.id) %>
+        <%= button_tag 'Add to cart', class: "button is-danger" %>
+      <% end %>
+    <% end %>
+    </div>
+</div>
