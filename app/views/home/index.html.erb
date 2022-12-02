@@ -17,7 +17,7 @@
 <% @soaps.each do |s| %>
 
     <div class="box is-one-third">
-      <li class="subtitle is-3"><%= link_to s.name, s %></li>
+      <li class="subtitle is-4"><%= link_to s.name, s %></li>
       <% if s.image.present? %>
           <%= link_to image_tag(s.image, alt: s.name, size:"400x600", :class => "card-img-top"), s %>
       <% end %>
