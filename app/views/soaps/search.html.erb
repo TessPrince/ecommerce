@@ -1,8 +1,16 @@
-<p class="mb-5" >
+<p class="mb-5">
   Soap found when searched for: <%= params[:keywords] %>
   <ul>
-    <% @soaps.each do |soap| %>
-      <li><%= link_to soap.name, soap %></li>
-    <% end %>
+    <div class="columns is-multiline is-centered">
+      <% @soaps.each do |s| %>
+
+          <div class="box is-one-third">
+            <li class="subtitle is-4"><%= link_to s.name, s %></li>
+            <% if s.image.present? %>
+                <%= link_to image_tag(s.image, alt: s.name, size:"400x600", :class => "card-img-top"), s %>
+            <% end %>
+          </div>
+      <% end %>
+    </div>
   </ul>
 </p>
