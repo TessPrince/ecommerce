@@ -45,7 +45,7 @@
                 </div>
                 <div a class="navbar-item has-text-dark">
                   <% if user_signed_in? %>
-                    <div> Welcome <%= current_user.email %> </div>
+                    <div><%= link_to current_user.email, edit_user_registration_path %></div>
                     <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "button" %>
                   <% else %>
                     <%= link_to "Sign in", new_user_session_path %>
