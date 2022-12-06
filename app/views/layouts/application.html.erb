@@ -43,6 +43,14 @@
                     </div>
                   </ul>
                 </div>
+                <div a class="navbar-item has-text-dark">
+                  <% if user_signed_in? %>
+                    <div> Welcome <%= current_user.email %> </div>
+                    <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "button" %>
+                  <% else %>
+                    <%= link_to "Sign in", new_user_session_path %>
+                  <% end %>
+                </div>
               </div>
             </div>
             <div class="navbar-end">
@@ -51,12 +59,6 @@
             </div>
           </nav>
         </header>
-        <% if user_signed_in? %>
-          <div> Welcome <%= current_user.email %> </div>
-            <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
-          <% else %>
-            <%= link_to "Sign in", new_user_session_path %>
-          <% end %>
         <% if flash[:notice] %>
           <p>
             <%= flash[:notice] %>
