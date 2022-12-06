@@ -17,9 +17,10 @@
         Remove From Cart
       <% end %>
     <% else %>
-      <%= form_with url: cart_index_path, method: :post do %>
-        <%= hidden_field_tag(:id, @soap.id) %>
-        <%= button_tag 'Add to cart', class: "button is-danger" %>
+      <%= form_with model: @order_detail do |f| %>
+        <%= f.hidden_field :soap_id, value: @soap.id %>
+        <%= f.hidden_field :quantity, value: 1, min: 1, :class => "" %>
+        <%= f.submit "Add to Cart", :class => "button is-dange" %>
       <% end %>
     <% end %>
     </div>

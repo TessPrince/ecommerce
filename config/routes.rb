@@ -14,19 +14,21 @@ Rails.application.routes.draw do
 
   devise_for :users
 
- get "/about", to: "about#index"
+  get "/about", to: "about#index"
 
- get "soaps/index"
- resources :soaps, only: [:index, :show] do
-  collection do
-    get "search"
+  get "soaps/index"
+  resources :soaps, only: [:index, :show] do
+    collection do
+      get "search"
+    end
   end
-end
 
-resources :categories, only: [:index, :show]
+  resources :order_details
 
-resources :cart, only: %i[create destroy]
-get "cart/index"
+  resources :categories, only: [:index, :show]
+
+  resources :cart, only: %i[create destroy]
+  get "cart/index"
 
   # /checkout/success
   # /checkout/create
