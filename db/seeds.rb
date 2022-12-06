@@ -44,9 +44,9 @@ provinces = CSV.parse(second_csv_data, headers: true)
 
 provinces.each do |province|
   new_province = Province.find_or_create_by(name: province["Province"])
-  new_province.PST = province["PST"]
-  new_province.GST = province["GST"]
-  new_province.HST = province["HST"]
+  new_province.pst = province["PST"]
+  new_province.gst = province["GST"]
+  new_province.hst = province["HST"]
   new_province.save!
 end
 
