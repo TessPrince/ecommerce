@@ -1,9 +1,11 @@
 class ApplicationController < ActionController::Base
+  include ApplicationHelper
+
   before_action :initialize_session
   helper_method :cart
+  helper_method :current_order
 
   protect_from_forgery with: :exception
-
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
@@ -22,4 +24,19 @@ class ApplicationController < ActionController::Base
     #pass an array of product IDs and get back a collection of products
     Soap.find(session[:shopping_cart])
   end
+
+  def current_order
+    if session[:order_id]
+      @current_order ||= Order.find(session[:order_id])
+      session[:order_id] = nil if @current_order.status
+    end
+
+    if session[:order_id].nil?
+      @current_order = Order.create!
+      session[:order_id] = @current_order.id
+    end
+
+    @current_order
+  end
+
 end

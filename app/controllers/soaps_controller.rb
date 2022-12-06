@@ -11,6 +11,7 @@ class SoapsController < ApplicationController
   def show
     @soap = Soap.find(params[:id])
     @category = @soap.category
+    @order_detail = current_order.order_details.new
     add_breadcrumb "Products", "index"
     add_breadcrumb @category.name, "index"
     add_breadcrumb @soap.name

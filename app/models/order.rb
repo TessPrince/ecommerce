@@ -1,6 +1,4 @@
 class Order < ApplicationRecord
   has_many :order_details
-  belongs_to :user
-
-  validates :amount, :order_status, presence:true
+  belongs_to :user, optional: true
 end
