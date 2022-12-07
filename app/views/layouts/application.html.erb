@@ -26,24 +26,13 @@
                 <a class=" navbar-item has-text-dark" href="/">Home</a>
                 <a class="navbar-item has-text-dark" href="/about">About</a>
                 <a class="navbar-item has-text-dark" href="/categories">Categories</a>
-                <div class="navbar-item has-dropdown is-hoverable">
-                  <summary class="has-text-dark navbar-link">
-                    <a href="/cart/show">Cart</a>
-                    <% if !OrderDetail.where(order_id: current_order.id).size.zero? %>
-                      <span class="">
-                        <%= OrderDetail.where(order_id: current_order.id).size %>
-                      </span>
-                    <% end %>
-                  </summary>
-                  <ul>
-                    <div class="navbar-dropdown">
-                      <% cart.each do |soap| %>
-                        <li class="navbar-item">
-                          <%= soap.name %><%= button_to "Delete", cart_path(soap), class: "button is-text button is-small", method: :delete %>
-                        </li>
-                      <% end %>
-                    </div>
-                  </ul>
+                <div class="navbar-item has-text-dark">
+                  <a class="has-text-dark" href="/cart/show">Cart</a>
+                  <% if !OrderDetail.where(order_id: current_order.id).size.zero? %>
+                    <span class="">
+                      <%= OrderDetail.where(order_id: current_order.id).size %>
+                    </span>
+                  <% end %>
                 </div>
                 <div a class="navbar-item has-text-dark">
                   <% if user_signed_in? %>

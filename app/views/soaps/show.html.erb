@@ -14,13 +14,13 @@
 
     <% if current_order.order_details.where(soap_id: @soap.id).first.present? %>
       <%= form_with(url:order_detail_path(current_order.order_details.where(soap_id: @soap.id).first), method: :delete) do |d| %>
-        <%= d.submit "Remove from cart", :class => "" %>
+        <%= d.submit "Remove from cart", :class => "button is-danger" %>
       <% end %>
     <% else %>
       <%= form_with model: @order_detail, remote: true do |f| %>
         <%= f.hidden_field :soap_id, value: @soap.id %>
         <%= f.hidden_field :quantity, value: 1, min: 1, :class => "" %>
-        <%= f.submit "Add to Cart", :class => "button is-dange" %>
+        <%= f.submit "Add to Cart", :class => "button" %>
       <% end %>
     <% end %>
     </div>
