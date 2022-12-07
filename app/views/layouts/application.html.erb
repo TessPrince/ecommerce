@@ -28,9 +28,11 @@
                 <a class="navbar-item has-text-dark" href="/categories">Categories</a>
                 <div class="navbar-item has-dropdown is-hoverable">
                   <summary class="has-text-dark navbar-link">
-                    <a href="/cart/index">Cart</a>
-                    <% if cart.present? %>
-                      <sup><%= cart.size %></sup>
+                    <a href="/cart/show">Cart</a>
+                    <% if !OrderDetail.where(order_id: current_order.id).size.zero? %>
+                      <span class="">
+                        <%= OrderDetail.where(order_id: current_order.id).size %>
+                      </span>
                     <% end %>
                   </summary>
                   <ul>

@@ -23,4 +23,8 @@ class CartController < ApplicationController
   def index
 
   end
+
+  def show
+    @order_details = current_order.order_details
+  end
 end

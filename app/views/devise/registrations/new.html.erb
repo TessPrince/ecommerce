@@ -26,11 +26,9 @@
     <%= f.text_field :address, autofocus: true, autocomplete: "address", :class => "" %>
   </div>
 
-  <div class="dropdown is-active">
-    <div class="dropdown-trigger">
-      <%= f.label :province_id, :class => "" %>
-      <p><%= f.select(:province_id, Province.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }, :class => 'button is-small')%></p>
-    </div>
+  <p>Province</p>
+  <div class="select">
+    <%= f.select(:province_id, Province.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }, :class => '')%>
   </div>
 
   <div class="actions">

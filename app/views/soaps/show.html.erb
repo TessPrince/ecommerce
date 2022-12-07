@@ -12,12 +12,12 @@
     <p class="has-text-primary">Price: $<%= @soap.price %> CAD</p>
     </div>
 
-    <% if cart.include?(@soap) %>
-      <%= button_to cart_path(@soap), class: "button is-danger", method: :delete do %>
-        Remove From Cart
+    <% if current_order.order_details.where(soap_id: @soap.id).first.present? %>
+      <%= form_with(url:order_detail_path(current_order.order_details.where(soap_id: @soap.id).first), method: :delete) do |d| %>
+        <%= d.submit "Remove from cart", :class => "" %>
       <% end %>
     <% else %>
-      <%= form_with model: @order_detail do |f| %>
+      <%= form_with model: @order_detail, remote: true do |f| %>
         <%= f.hidden_field :soap_id, value: @soap.id %>
         <%= f.hidden_field :quantity, value: 1, min: 1, :class => "" %>
         <%= f.submit "Add to Cart", :class => "button is-dange" %>

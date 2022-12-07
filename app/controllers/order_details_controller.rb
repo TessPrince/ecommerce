@@ -2,12 +2,13 @@ class OrderDetailsController < ApplicationController
   before_action :set_order
 
   def create
-    @order_detail = @order.order_detail.create(order_params)
+    @order_detail = @order.order_details.new(order_params)
+    @order_detail.save!
     @order_details = current_order.order_details
 
     flash[:notice] = " #{@order_detail.soap.name} added to cart."
 
-    redirect_back_or_to request.referrer
+    redirect_back_or_to request.referer
   end
 
   def update
@@ -17,7 +18,7 @@ class OrderDetailsController < ApplicationController
 
     flash[:notice] = " #{@order_detail.soap.name} updated from cart."
 
-    redirect_back_or_to request.referrer
+    redirect_back_or_to request.referer
   end
 
   def destroy
@@ -27,7 +28,7 @@ class OrderDetailsController < ApplicationController
 
     flash[:notice] = " #{@order_detail.soap.name} removed from cart."
 
-    redirect_back_or_to request.referrer
+    redirect_back_or_to request.referer
   end
 
   private

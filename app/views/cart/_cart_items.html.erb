@@ -1,0 +1,23 @@
+<% @order_details.each do |order| %>
+  <div class="box columns">
+    <div class="column is-2">
+      <% if order.soap.image.present? %>
+        <%= link_to image_tag(order.soap.image, alt: order.soap.name, size:"200x300"), order.soap %>
+      <% end %>
+    </div>
+      <div class="column is-four-fifth">
+        <h3 class="subtitle is-3"><%= order.soap.name %></h3>
+        <p class="title is-4 is-offset-8"><%= order.soap.price %></p>
+        <%= form_with model: order do |i| %>
+          <%= i.hidden_field :soap_id, value: order.soap.id %>
+          <%= i.hidden_field :quantity, value: order.quantity.to_i %>
+          <div class="column is-four-fifth">
+          <%= i.submit "Update Cart", class: "button is-dark is-small" %>
+          <%= link_to "Remove Items", order, method: :delete, class: "button is-danger is-small"%>
+          </div>
+        <% end %>
+        </div>
+    </div>
+      <% end %>
+
+<h3>Your current order has a total of: <%= current_order.amount %></h3>

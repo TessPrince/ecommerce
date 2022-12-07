@@ -73,14 +73,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_170038) do
 
   create_table "order_details", force: :cascade do |t|
     t.integer "order_id", null: false
-    t.integer "product_id_id", null: false
+    t.integer "soap_id", null: false
     t.decimal "price"
     t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "total"
     t.index ["order_id"], name: "index_order_details_on_order_id"
-    t.index ["product_id_id"], name: "index_order_details_on_product_id_id"
+    t.index ["soap_id"], name: "index_order_details_on_soap_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -132,7 +132,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_170038) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "order_details", "orders"
-  add_foreign_key "order_details", "product_ids"
+  add_foreign_key "order_details", "soaps"
   add_foreign_key "orders", "users"
   add_foreign_key "soaps", "categories"
   add_foreign_key "users", "provinces"
