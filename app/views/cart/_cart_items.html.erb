@@ -5,21 +5,21 @@
         <%= link_to image_tag(order.soap.image, alt: order.soap.name, size:"200x300"), order.soap %>
       <% end %>
     </div>
-      <div class="is-four-fifth">
-        <h3 class="subtitle is-3"><%= order.soap.name %></h3>
-        <%= form_with model: order do |i| %>
-          <%= i.hidden_field :soap_id, value: order.soap.id %>
-          <p>Quantity: <%= i.number_field :quantity, value: order.quantity.to_i, class: "input" %></p>
-          <div class="is-four-fifth">
-            <%= i.submit "Update Cart", class: "button is-dark is-small" %>
-            <%= link_to "Remove Items", order, method: :delete, class: "button is-danger is-small"%>
-          </div>
-        <% end %>
+    <div class="is-four-fifth">
+      <h3 class="subtitle is-3"><%= order.soap.name %></h3>
+      <%= form_with model: order do |i| %>
+        <%= i.hidden_field :soap_id, value: order.soap.id %>
+        <p>Quantity: <%= i.number_field :quantity, value: order.quantity.to_i, class: "input" %></p>
+        <div class="is-four-fifth">
+          <%= i.submit "Update Cart", class: "button is-dark is-small" %>
+          <%= link_to "Remove Items", order, method: :delete, class: "button is-danger is-small"%>
         </div>
-        <div class="column">
-          <p class="title is-4 is-offset-8 has-text-right"><%= order.soap.price %>$</p>
-        </div>
-      </div>
       <% end %>
+    </div>
+    <div class="column">
+      <p class="title is-4 is-offset-8 has-text-right">$<%= order.soap.price %></p>
+    </div>
+  </div>
+<% end %>
 
-<h3>Your current order has a total of: <%= current_order.amount %></h3>
+<h3 class="block subtitle is-4 has-text-right">Your current order has a total of: <strong>$<%= current_order.amount %></strong></h3>
