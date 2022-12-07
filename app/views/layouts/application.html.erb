@@ -29,7 +29,7 @@
                 <div class="navbar-item has-text-dark">
                   <a class="has-text-dark" href="/cart/show">Cart</a>
                   <% if !OrderDetail.where(order_id: current_order.id).size.zero? %>
-                    <span class="">
+                    <span class="has-text-primary">
                       <%= OrderDetail.where(order_id: current_order.id).size %>
                     </span>
                   <% end %>
