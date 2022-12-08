@@ -1,0 +1,8 @@
+<% @line_items.each do |item| %>
+  <tr>
+    <td><%= link_to item.description, Soap.where(name: item.description).first, :class => "" %></td>
+    <td><%= number_to_currency item.price.unit_amount / 100.0 %></td>
+    <td><%= item.quantity %></td>
+    <td><%= number_to_currency item.amount_subtotal / 100 %></td>
+  </tr>
+<% end %>

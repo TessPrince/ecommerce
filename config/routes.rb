@@ -23,6 +23,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :orders
+
   resources :order_details
 
   resources :categories, only: [:index, :show]
@@ -30,6 +32,8 @@ Rails.application.routes.draw do
   resources :cart, only: %i[create destroy show]
   get "cart/index"
   get "cart/show"
+
+  get "orders/admin"
 
   # /checkout/success
   # /checkout/create

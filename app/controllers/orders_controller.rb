@@ -1,5 +1,8 @@
 class OrdersController < ApplicationController
   def index
+    @orders = Order.where(user_id: current_user.id)
+
+    add_breadcrumb "My Orders"
   end
 
   def show
@@ -9,5 +12,8 @@ class OrdersController < ApplicationController
 
     add_breadcrumb "My Orders", orders_index_path
     add_breadcrumb @order.id
+  end
+
+  def admin
   end
 end
