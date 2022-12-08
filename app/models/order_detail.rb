@@ -21,12 +21,12 @@ class OrderDetail < ApplicationRecord
   end
 
   #For Stripe
-  # def to_builder
-  #   Jbuilder.new do |item|
-  #     item.quantity quantity
-  #     item.price_data product.to_builder
-  #   end
-  # end
+  def to_builder
+    Jbuilder.new do |item|
+      item.quantity quantity
+      item.price_data soap.to_builder
+    end
+  end
 
   private
 
