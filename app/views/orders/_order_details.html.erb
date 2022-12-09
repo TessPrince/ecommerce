@@ -1,8 +1,19 @@
-<% @line_items.each do |item| %>
-  <tr>
-    <td><%= link_to item.description, Soap.where(name: item.description).first, :class => "" %></td>
-    <td><%= number_to_currency item.price.unit_amount / 100.0 %></td>
-    <td><%= item.quantity %></td>
-    <td><%= number_to_currency item.amount_subtotal / 100 %></td>
-  </tr>
-<% end %>
+<h2 class="title is-2">Order Details</h2>
+<table class="table is-fullwidth is-hoverable">
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <% @line_items.each do |item| %>
+      <tr>
+        <td><%= link_to item.description, Soap.where(name: item.description).first, :class => "" %></td>
+        <td><%= number_to_currency item.price.unit_amount / 100.0 %></td>
+        <td><%= item.quantity %></td>
+      </tr>
+    <% end %>
+  </tfoot>
+</table>

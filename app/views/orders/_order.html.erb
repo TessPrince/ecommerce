@@ -1,4 +1,6 @@
-<th scope="row"><%= link_to order.id, order %></th>
+<tr>
+  <td><%= link_to order.id, order %></td>
   <td><%= order.payment %></td>
   <td><%= number_to_currency order.amount %></td>
   <td><%= order.status %></td>
+</tr>

@@ -1,9 +1,15 @@
 <h1 class="title is-2">Category: <%= @category.name %></h1>
-<ul>
+<div class="columns is-multiline is-centered">
   <% @soaps.each do |s| %>
-    <li><%= link_to s.name, s %></li>
+    <ul>
+      <div class="box is-one-third">
+        <li class="subtitle is-4"><%= link_to s.name, s %></li>
+        <% if s.image.present? %>
+            <%= link_to image_tag(s.image, alt: s.name, size:"400x600", :class => "card-img-top"), s %>
+        <% end %>
+      </div>
+    </ul>
   <% end %>
-</ul>
-
+</div>
 
 

@@ -1,9 +1,21 @@
-<h1>Thank you for your purchase!</h1>
-
+<h2 class="title is-2">Thank you for your purchase!</h2>
+<table class="table is-fullwidth is-hoverable">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Unit Price</th>
+      <th>Quantity</th>
+      <th>Subtotal</th>
+    </tr>
+  </thead>
+  <tfoot>
 <% @line_items.each do |d| %>
-  <%= d.description %>
-  <%= d.price.unit_amount %>
-  <%= d.quantity %>
-  <%= d.amount_subtotal %>
+  <tr>
+    <td><%= d.description %></td>
+    <td><%= d.price.unit_amount %></td>
+    <td><%= d.quantity %></td>
+    <td><%= d.amount_subtotal %></td>
+  </tr>
 <% end %>
-<%= @line_items %>
+  </tfoot>
+</table>

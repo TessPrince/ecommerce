@@ -26,5 +26,6 @@ class CartController < ApplicationController
 
   def show
     @order_details = current_order.order_details
+    add_breadcrumb "My Cart"
   end
 end

@@ -34,6 +34,7 @@
                     </span>
                   <% end %>
                 </div>
+                <a class="navbar-item has-text-dark" href="/orders">My Orders</a>
                 <div a class="navbar-item has-text-dark">
                   <% if user_signed_in? %>
                     <div><%= link_to current_user.email, edit_user_registration_path %></div>

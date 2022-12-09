@@ -51,7 +51,7 @@
       </div>
     <% end %>
 
-    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => "button is-small is-danger" %></p>
 
     <%= link_to "Back", :back %>
   </div>
