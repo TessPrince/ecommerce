@@ -17,3 +17,4 @@
     <% end %>
   </tfoot>
 </table>
+<h3 class="title is-4">Total: $<%= @line_items.collect { |order_detail| (order_detail.price.unit_amount / 100.0) * order_detail.quantity }.sum %></h3>
