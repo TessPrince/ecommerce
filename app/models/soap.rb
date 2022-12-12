@@ -12,7 +12,7 @@ class Soap < ApplicationRecord
     (self.price * 100).to_i
   end
 
-  def display_name
+  def product_name_array
     Jbuilder.new do |soap|
       soap.name self.name
       soap.description self.description
@@ -23,7 +23,7 @@ class Soap < ApplicationRecord
     Jbuilder.new do |soap|
       soap.currency "cad"
       soap.unit_amount multiply_price
-      soap.product_data self.display_name
+      soap.product_data self.product_name_array
     end
   end
 end
